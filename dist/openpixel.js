@@ -311,14 +311,19 @@ var Pixel = /*#__PURE__*/function () {
         },
         // document title
         bn: function bn() {
-          return Browser.nameAndVersion();
+
+          const browse = window.bowser.getParser(window.navigator.userAgent);
+          return browse.getBrowserName();
+
         },
         // browser name and version number
         md: function md() {
-          return Browser.isMobile();
+          const browse = window.bowser.getParser(window.navigator.userAgent);
+          return browse.getOSName();
         },
         // is a mobile device?
         ua: function ua() {
+
           return Browser.userAgent();
         },
         // user agent
