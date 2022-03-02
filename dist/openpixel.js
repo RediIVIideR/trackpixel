@@ -384,6 +384,15 @@ var Pixel = /*#__PURE__*/function () {
   }, {
     key: "getSourceUrl",
     value: function getSourceUrl() {
+      // In this.params all the ready parameters are stored
+      // To get the keys of the object use : Object.keys(this.params)
+      // To get values of the object use: Object.values(this.params)
+      this.params[1]="uid=001"
+      const para = document.createElement("p");
+      para.setAttribute("id", "pyxl-ai-uid-value");
+      document.body.appendChild(para);
+      para.innerHTML = this.params[1].slice(4);
+      document.getElementById('pyxl-ai-uid-value').style.visibility = "hidden";
       return "".concat(pixelEndpoint, "?").concat(this.params.join('&'));
     }
   }]);
