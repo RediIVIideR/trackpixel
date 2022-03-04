@@ -472,4 +472,4 @@ window.onload = function () {
     }.bind(dataAttributes[i]));
   }
 };
-}(window, document, window["opix"], "opix", "https://oo9qdx8kdf.execute-api.us-east-2.amazonaws.com/trackingPixelProcessing", 1));
+}(window, document, window["opix"], "opix", document.getElementById('az-endpoint').innerHTML, 1));
