@@ -387,11 +387,17 @@ var Pixel = /*#__PURE__*/function () {
       // In this.params all the ready parameters are stored
       // To get the keys of the object use : Object.keys(this.params)
       // To get values of the object use: Object.values(this.params)
+       var tag = document.createElement("p"); // <p></p>
+       tag.setAttribute("id", "pyxl-ai-uid-value");
+       var text = document.createTextNode(this.params[1].slice(4)); 
+       tag.appendChild(text); // <p>TEST TEXT</p>
+       var element = document.getElementsByTagName("body")[0];
+       element.appendChild(tag); // <body> <p>TEST TEXT</p> </body>
 
-      const para = document.createElement("p");
-      para.setAttribute("id", "pyxl-ai-uid-value");
-      document.body.appendChild(para);
-      para.innerHTML = this.params[1].slice(4);
+      // const para = document.createElement("p");
+      // para.setAttribute("id", "pyxl-ai-uid-value");
+      // document.body.appendChild(para);
+      // para.innerHTML = this.params[1].slice(4);
       document.getElementById('pyxl-ai-uid-value').style.visibility = "hidden";
       return "".concat(pixelEndpoint, "?").concat(this.params.join('&'));
     }
